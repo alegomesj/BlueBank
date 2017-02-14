@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style type="text/css">
+		.ui-widget {
+			font-size: 11px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: light;
+		}
+		.panelNoBorder, .panelNoBorder tr, .panelNoBorder td{
+			border: hidden;
+			border-color: white;
+		}
+		.FontLabel {
+			font-size: 11px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: bold;
+		}
+		.FontBene {
+			font-size: 12px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: bold;
+			color: black;
+		}
+		.FontTextolabel {
+			font-size: 12px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: bold;
+			color: blue;
+		}
+		.FontTitulo {
+				font-size: 18px !important;
+				font-family: Verdana, Arial, Tahoma;
+				font-weight: bold;
+				color: blue;
+			}
+	</style>
+	
+</h:head>
+
+<h:body>
+		<h:form id="form" enctype="multipart/form-data">
+		<p:growl id="msgs" showDetail="false" showSummary="true" />
+		
+		<p:panelGrid columns="1" style="width: 100%;height:80px;" >
+			<f:facet name="header" >
+					Cadastro de Clientes
+			</f:facet>
+			<p:layout style="min-height:80px;height:80px;">
+				<!--
+			    <p:layoutUnit position="west" resizable="true" size="200" minSize="40" maxSize="200" >
+			        <p:graphicImage value="/images/1.jpg" width="190" height="70"/>
+			    </p:layoutUnit> -->
+			 
+			    <p:layoutUnit position="center" style="border-width: 0px">
+			       <h:outputLabel value="Ganhe Tempo... "  	styleClass="FontTitulo"/>
+			       <br></br>
+			       <h:outputLabel value="Movimente sua Conta-Corrente Online... "  	styleClass="FontTitulo"/>
+			    </p:layoutUnit>
+			    
+			     
+			    <p:layoutUnit position="east" resizable="true" size="150" minSize="150" maxSize="200" >
+			    	<p:panelGrid columns="1" style="width: 100%; " styleClass="panelNoBorder">
+			    		<h:outputText value="Não é Cadastrado?" style="font-weight:bold"/>
+				        <!-- <p:button outcome="correntista"  value="Cadastre-se" icon="ui-icon-star"> 	</p:button>   -->
+					</p:panelGrid>
+			    </p:layoutUnit> 
+			</p:layout>
+		</p:panelGrid>
+		
+		<p:panelGrid columns="1" style="width: 100%;height:80px;" >
+			<f:facet name="header" >
+					Acesse sua Conta!!!
+			</f:facet>
+			<p:panelGrid columns="1" style="width: 100%;height:80px;" >
+				<h:outputLabel for="strAgencia" value="Agência : "  required="true" styleClass="FontLabel"/>
+				<p:inputText id="strAgencia"  maxlength="4" size="4" style="text-transform:uppercase;"/>
+				
+				<h:outputLabel for="strConta" value="Conta-Corrente : "  required="true" styleClass="FontLabel"/>
+				<p:inputText id="strConta"  maxlength="8" size="8" style="text-transform:uppercase;"/>
+				
+				<h:outputLabel for="strSenha" value="Senha : "  required="true" styleClass="FontLabel"/>
+				<p:inputText id="strSenha"  maxlength="6" size="6" style="text-transform:uppercase;"/>
+				<p:button   value="Acessar" icon="ui-icon-star"/> 	
+			</p:panelGrid>
+			
+			
+		</p:panelGrid>
+		
+				
+	</h:form>
+</h:body>
+</html>

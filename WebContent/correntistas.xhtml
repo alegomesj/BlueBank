@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style type="text/css">
+		.ui-widget {
+			font-size: 11px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: light;
+		}
+		.panelNoBorder, .panelNoBorder tr, .panelNoBorder td{
+			border: hidden;
+			border-color: white;
+		}
+		.FontLabel {
+			font-size: 11px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: bold;
+		}
+		.FontBene {
+			font-size: 12px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: bold;
+			color: black;
+		}
+		.FontTextolabel {
+			font-size: 12px !important;
+			font-family: Verdana, Arial, Tahoma;
+			font-weight: bold;
+			color: blue;
+		}
+		.FontTitulo {
+				font-size: 18px !important;
+				font-family: Verdana, Arial, Tahoma;
+				font-weight: bold;
+				color: blue;
+			}
+	</style>
+	
+</h:head>
+
+<h:body>
+		<h:form id="form" enctype="multipart/form-data">
+		<p:growl id="msgs" showDetail="false" showSummary="true" />
+		
+		<p:panelGrid columns="1" style="width: 100%;height:80px;" >
+			<f:facet name="header" >
+					Blue Bank
+			</f:facet>
+			<p:layout style="min-height:80px;height:80px;">
+				
+			    <p:layoutUnit position="top" resizable="true" size="200" minSize="40" maxSize="200" >
+			        <p:graphicImage value="/images/1.jpg" width="190" height="70"/>
+			    </p:layoutUnit> 
+			 
+			    <p:layoutUnit position="center" style="border-width: 0px">
+			       <p:dataTable id="dtAtendentes" var="cor" value="#{mbConta.lstCorrentistas}"  emptyMessage="Ainda não foi cadastrado" 
+						    		selectionMode="single" style="width: 100%;height:150px;">
+					<f:facet name="header">
+											 	Correntistas Cadastrados!
+					</f:facet>
+													        
+					<p:column headerText="Nome">
+									<h:outputText value="#{cor.cli_nome}"/>
+					</p:column>
+					<p:column headerText="CPF">
+									<h:outputText value="#{cor.cli_cpf}"/>
+					</p:column>
+					<p:column headerText="Agência">
+									<h:outputText value="#{cor.cli_agencia}"/>
+					</p:column>
+					<p:column headerText="Conta-Corrente">
+									<h:outputText value="#{cor.cli_contacorrente}"/>
+					</p:column>
+					<p:column headerText="Senha">
+									<h:outputText value="#{cor.cli_senha}"/>
+					</p:column>
+					<p:column headerText="Saldo">
+									<h:outputText value="#{cor.cli_saldo}"/>
+					</p:column>
+					
+				</p:dataTable>
+			    </p:layoutUnit>
+			    
+			     
+			    
+			</p:layout>
+		</p:panelGrid>
+		
+		<p:panelGrid columns="1" style="width: 100%;height:80px;" styleClass="panelNoBorder">>
+			<f:facet name="header" >
+					Cadastre as Contas!!!
+			</f:facet>
+			<p:panelGrid columns="4" style="width: 100%;height:80px;" >
+				<h:outputLabel  value="Agência : "  required="true" styleClass="FontLabel"/>
+				<p:inputText value="#{mbAtendente.correntistaCadastro.cli_nome}" maxlength="60" size="4" style="text-transform:uppercase;"/>
+				
+				
+				<p:button   value="Gravar" icon="ui-icon-star"/> 	
+			</p:panelGrid>
+			
+			
+		</p:panelGrid>
+		
+				
+	</h:form>
+</h:body>
+</html>
